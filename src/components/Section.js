@@ -22,6 +22,7 @@ function Section({ title, description, btnFirst, btnSecond, imgSrc }) {
 export default Section;
 
 const Wrap = styled.div`
+	z-index: 0;
 	width: 100vw;
 	height: 100vh;
 	background-image: ${(props) => `url("/images/${props.bgImage}")`};

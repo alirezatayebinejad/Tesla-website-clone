@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
 	const [burgerStatus, setBurgerStatus] = useState(false);
+	const cars = useSelector(selectCars);
+	console.log(cars);
 	return (
 		<>
 			<Container>
@@ -12,10 +16,12 @@ function Header() {
 					</a>
 				</Logo>
 				<MenuMid>
-					<a href="#">Model 3</a>
-					<a href="#">Model y</a>
-					<a href="#">Model s</a>
-					<a href="#">Model x</a>
+					{cars &&
+						cars.map((car, index) => (
+							<a key={index} href="#">
+								{car}
+							</a>
+						))}
 					<a href="#">Solar Roof</a>
 					<a href="#">Solar Panels</a>
 				</MenuMid>
@@ -30,18 +36,12 @@ function Header() {
 					<CloseIcon onClick={() => setBurgerStatus(false)}>
 						<img src="/images/close-icon.svg" alt="" />
 					</CloseIcon>
-					<a href="#">
-						<li>Model 3</li>
-					</a>
-					<a href="#">
-						<li>Model s</li>
-					</a>
-					<a href="#">
-						<li>Model x</li>
-					</a>
-					<a href="#">
-						<li>Model y</li>
-					</a>
+					{cars &&
+						cars.map((car, index) => (
+							<a key={index} href="#">
+								<li>{car}</li>
+							</a>
+						))}
 					<a href="#">
 						<li>Solar Roof</li>
 					</a>

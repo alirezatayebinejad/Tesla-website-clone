@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 function Section({ title, description, btnFirst, btnSecond, imgSrc }) {
@@ -33,6 +33,27 @@ const Wrap = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	scroll-snap-align: start;
+
+	.rocket {
+		color: blue;
+	}
+	.animateRocket {
+		color: red;
+		animation-duration: 1000ms;
+		animation-name: fadeUpEffect;
+	}
+
+	@keyframes fadeUpEffect {
+		0% {
+			opacity: 0;
+			transform: translateY(150px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 `;
 const HeadTitle = styled.div`
 	margin-top: 80px;

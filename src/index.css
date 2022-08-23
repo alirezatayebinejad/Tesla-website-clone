@@ -5,6 +5,9 @@
 	font-family: "Rubik", sans-serif;
 	overflow-x: hidden;
 }
+a {
+	text-decoration: none;
+}
 body {
 	width: 100%;
 }

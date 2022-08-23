@@ -81,7 +81,7 @@ function Header() {
 export default Header;
 
 const Container = styled.div`
-	z-index: 0;
+	z-index: 20;
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -140,6 +140,7 @@ const CloseIcon = styled.div`
 	}
 `;
 const BurgerMenu = styled.div`
+	z-index: 20;
 	::-webkit-scrollbar {
 		display: none;
 	}

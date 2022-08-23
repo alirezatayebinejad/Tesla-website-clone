@@ -74,6 +74,7 @@ const Bottons = styled.div`
 	}
 `;
 const DownSec = styled.div`
+	z-index: 10;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
